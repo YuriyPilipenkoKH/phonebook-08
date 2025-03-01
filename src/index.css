@@ -378,7 +378,7 @@ height: 55px;
 
 } 
 .text-purple-900 {
-  color:var(--color-purple); /* Tailwind's purple-900 color */
+  color:var(--color-purple); 
   font-weight: 600;
   transition: all 0.5s ease-in-out,
 }
