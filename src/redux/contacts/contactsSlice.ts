@@ -84,7 +84,7 @@ const contactsSlice = createSlice({
   .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.contactsList = state.contactsList
-          .filter(contact => contact._id !== payload.contact._id);
+          .filter((contact : Contact) => contact._id !== payload.contact._id);
         state.error = null;
       })
   .addCase(deleteContact.rejected, (state, { payload }) => {
@@ -98,7 +98,7 @@ const contactsSlice = createSlice({
       })
   .addCase(editContact.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.contactsList = state.contactsList.map(contact =>
+        state.contactsList = state.contactsList.map((contact : Contact) =>
           contact._id === payload.contact._id ? payload.contact : contact
         );
         state.error = null;

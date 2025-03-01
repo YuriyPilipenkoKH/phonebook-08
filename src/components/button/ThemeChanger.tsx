@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAll } from '../../hooks/useAll';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { toggleTheme } from '../../redux/theme/themeSlice';
@@ -8,7 +9,10 @@ import {MdOutlineLightMode} from 'react-icons/md';
 export default function ThemeChanger() {
     const {theme} = useAll()
     const dispatch = useAppDispatch()
-
+    useEffect(() => {
+      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
 
 
   return (

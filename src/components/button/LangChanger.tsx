@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useAll } from '../../hooks/useAll'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { toggleLang } from '../../redux/lang/langSlice'
@@ -7,6 +8,10 @@ const LangChanger = () => {
     const {language} = useAll()
     const dispatch = useAppDispatch()
 
+    useEffect(() => {
+      localStorage.setItem('language', language);
+      document.documentElement.setAttribute('data-lang', language);
+    }, [language]);
 
   return (
       <button
