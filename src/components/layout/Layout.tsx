@@ -23,6 +23,7 @@ const Layout = () => {
 // }
 const click = () => {
   dispatch(onModalOpen(fakeContact))
+  
 }
     return (
     <>
