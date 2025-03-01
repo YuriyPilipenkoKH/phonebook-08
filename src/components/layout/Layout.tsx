@@ -1,15 +1,13 @@
 import { Suspense } from 'react'
 import { MainFooter, MainHeader } from './Layout.styled'
 import { Outlet } from 'react-router-dom'
-import ThemeChanger from '../button/ThemeChanger'
-import LangChanger from '../button/LangChanger'
 import MainModal from '../modals/MainModal'
 import { useAll } from '../../hooks/useAll'
 import { useLanguage } from '../../hooks/useLanguage'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { onModalOpen } from '../../redux/modal/modalSlice'
-import { fakeContact } from '../../data/contact'
-
+import { logOut } from '../../redux/auth/operations'
+import AppBar from '../appbar/AppBar'
+import MirrorStreamIcon from '../../img/icons/mirrorStream'
 
 
 
@@ -18,32 +16,27 @@ const Layout = () => {
   const lang = useLanguage()
     const dispatch = useAppDispatch();
     
-// const quit =() => {
-//   dispatch(logOut( 'Dude'))
-// }
-const click = () => {
-  dispatch(onModalOpen(fakeContact))
-  
+const quit =() => {
+  dispatch(logOut( 'Dude'))
 }
+
     return (
     <>
       <MainHeader  className="main-header" >
-        {/* <AppBar/> */} <p>header there</p>
-        <ThemeChanger/>
-        <LangChanger/>
-        <button type='button' onClick={click}>Mo</button>
+        <AppBar/> 
+
       </MainHeader>
         <Suspense >
             <Outlet />
         </Suspense>
         <MainFooter >
           {lang.footerTitle} 
-          {/* <button 
+     <button 
           className='quit'
           type='button' 
           onClick={quit}>—</button>
-          {'2025'} */}
-          {/* < MirrorStreamIcon /> */}
+          {'2025'} 
+          < MirrorStreamIcon />
 
         </MainFooter>
 

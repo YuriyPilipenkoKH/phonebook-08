@@ -6,6 +6,8 @@ import { Contact } from '../../types/contact.model';
 import { useAll } from '../../hooks/useAll';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
+import EditContactForm from '../forms/EditContactForm';
+import { fakeContact } from '../../data/contact';
 
 interface MainModalProps {
   contact?: Contact
@@ -13,7 +15,7 @@ interface MainModalProps {
 const modalRoot = document.getElementById('modal-root');
 
 const MainModal: React.FC<MainModalProps> = (
-  // {contact}
+  {contact}
 ) => {
   const dispatch = useAppDispatch();
   const lang = useLanguage()
@@ -56,9 +58,9 @@ const MainModal: React.FC<MainModalProps> = (
           <ModalContainer >
             <ModalTitle> {lang.appTitle } </ModalTitle>
             <ModalText> {lang.updateInfo} </ModalText>
-{/* 
+
             <EditContactForm 
-              contact={ contact || fakeContact } /> */}
+              contact={ contact || fakeContact } />
           </ModalContainer>
         </ModalOverlay>
       ,

@@ -15,6 +15,7 @@ import { modalReducer } from './modal/modalSlice';
 import { themeReducer } from './theme/themeSlice';
 import { langReducer } from './lang/langSlice';
 import { authReducer, AuthState } from './auth/authSlice';
+import { generatorReducer } from './generator/generatorSlice';
 
 
 const authPersistConfig= {
@@ -31,7 +32,7 @@ export const store = configureStore({
         modal: modalReducer,
         theme:themeReducer,
         lang:langReducer,
-        // generator:generatorReducer,
+        generator:generatorReducer,
         auth: persistReducer<AuthState >(authPersistConfig, authReducer) ,// ✅ Correctly typed
     },
 
