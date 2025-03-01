@@ -14,6 +14,8 @@ const initialState:{ lang: languageTypes } = {
     reducers: {
       toggleLang: (state) => {
         state.lang = state.lang === "english" ? "ukrainian" : "english";
+        localStorage.setItem('language', state.lang);
+        document.documentElement.setAttribute('data-lang', state.lang);
       },
     },
   });

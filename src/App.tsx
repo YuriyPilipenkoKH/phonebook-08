@@ -3,12 +3,14 @@ import { Container } from "./components/container/Container"
 import Layout from "./components/layout/Layout"
 import HomePage from "./pages/HomePage"
 import NotFoundPage from "./pages/NotFoundPage"
+import ErrorBoundary from "./components/errorboundary/ErrorBoundary"
 
 
 function App() {
 
 
   return (
+  <ErrorBoundary>
     <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -21,6 +23,7 @@ function App() {
         </Route>
       </Routes>
     </Container>
+  </ErrorBoundary>
   )
 }
 
