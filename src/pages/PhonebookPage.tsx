@@ -16,12 +16,13 @@ import GenerateRandomContact from '../components/generator/GenerateRandomContact
 import SearchBar from '../components/phonebook/searchbar/SearchBar'
 import Message from '../components/phonebook/message/Message'
 import { getLang } from '../redux/lang/selectors'
+import Loader from '../components/loader/Loader'
 
 const PhonebookPage = () => {
   const lang = useLanguage()
 
   const language = useSelector(getLang)
-  const{contacts, currentPage, query, message} = useContacts()
+  const{contacts, currentPage, query, message, isLoading} = useContacts()
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchContacts({ page: currentPage, }))
@@ -29,26 +30,29 @@ const PhonebookPage = () => {
   console.log('query',query);
   
   return (
-    <PhonebookWrapper className="phonebook__wrap">
-    <Section title={lang.phonebook} icon ={language === 'english' &&  <IconMphone/>}>
-      <ContactForm  />
-      <SearchBar/>
-       <GenerateRandomContact/>
-      </Section >
+    <>
+      <PhonebookWrapper className="phonebook__wrap">
+      <Section title={lang.phonebook} icon ={language === 'english' &&  <IconMphone/>}>
+        <ContactForm  />
+        <SearchBar/>
+        <GenerateRandomContact/>
+        </Section >
 
-      {/* <Filter /> */}
-      
-    {contacts.length > 0 ? (
-      <ListWrap>
-        <PaginationControls />
-        <ContactList contacts ={contacts} />
-      </ListWrap>
-      ): (
-        <>
-        <Message text={message || ''}/>
-        </>
-      )  }
-    </PhonebookWrapper>
+        {/* <Filter /> */}
+        
+      {contacts.length > 0 ? (
+        <ListWrap>
+          <PaginationControls />
+          <ContactList contacts ={contacts} />
+        </ListWrap>
+        ): (
+          <>
+          <Message text={message || ''}/>
+          </>
+        )  }
+      </PhonebookWrapper>
+      {isLoading && <Loader/>}
+    </>
   )
 }
 
