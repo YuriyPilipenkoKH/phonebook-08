@@ -5,6 +5,7 @@ import AuthNav from '../authnav/AuthNav';
 import ThemeChanger from '../button/ThemeChanger';
 import LangChanger from '../button/LangChanger';
 import UserMenu from '../usermenu/UserMenu';
+import MobileMenu from '../mobilemenu/MobileMenu';
 
 
 const AppBar = () => {
@@ -18,6 +19,7 @@ const AppBar = () => {
         <ThemeChanger/>
       </Wrap>
         {token ? <UserMenu /> : <AuthNav />}
+        <MobileMenu/>
     </StyledHeader>
   );
 };

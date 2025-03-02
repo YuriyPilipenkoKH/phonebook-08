@@ -6,7 +6,7 @@ const MobileMenu = () => {
 
   return (
     <FlatButton >
-      <CgMenuGridR size={20} />
+      <CgMenuGridR size={25} />
     </FlatButton>
   )
 }

@@ -27,8 +27,8 @@ const Navigation = () => {
 
     </StyledWrap>
 
-    <MobileWrap>
-    <Link  to="/">
+    <MobileWrap className='MobileWrap'>
+    <Link  to="/" className='home_link'>
         <VscHome size={25}/>
       </Link>
 

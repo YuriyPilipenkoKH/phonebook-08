@@ -46,7 +46,7 @@ export const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 8px ;
   border:2px solid transparent;
   border-radius: 4px;
   text-decoration: none;
@@ -56,7 +56,9 @@ export const StyledLink = styled(NavLink)`
   font-weight: 600;
   transition: 0.5s ease-in-out;
 
-
+  &:hover {
+  background-color: #5983679b;
+  }
 
   &.active {
     color: #eee;

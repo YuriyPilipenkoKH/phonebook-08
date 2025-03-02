@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
@@ -88,5 +88,24 @@ export const MobileWrap = styled.div`
 	gap: 32px;
     @media screen and (min-width: 768px) {
     display: none;
-}
+	}
+	
+	&>a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	padding: 8px;
+	font-weight: 600;
+	border-radius: 50%; 
+	border: none;
+	background-color: transparent;
+	transition: all 0.4s ease-in-out; 
+	&:hover {
+	background-color: #5983679b;
+	}
+
+    }
+
 `
