@@ -14,6 +14,7 @@ import { Notify } from 'notiflix';
 import capitalize from '../../lib/capitalize';
 
 
+
 const LoginForm = () => {
   const TIME = 25
   const dispatch = useAppDispatch();
@@ -61,8 +62,10 @@ const LoginForm = () => {
     setTimer(true)
   };
   const onSubmit = (data: LoginSchemaType) => {
+    setTimer(false)
     dispatch(logIn(data))
     .then((res) => {
+      console.log(res);
       if(res.type === 'auth/login/rejected' ){
         const errorCode = res.payload as string
         const translatedMsg = lang[errorCode] || errorCode;

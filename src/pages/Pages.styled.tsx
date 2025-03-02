@@ -36,6 +36,7 @@ export const AuthWrapper= styled.div`
   background-size: cover;
   display: grid;
   justify-items: center;
+  transition: background-image 0.5s ease-in-out;
 
   &>.login__wrap {
   width: 360px;

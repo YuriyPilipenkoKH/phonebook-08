@@ -51,6 +51,7 @@ const SignupForm = () => {
    
     dispatch(register(data))
     .then((res) => {
+      console.log(res);
       if(res.type === 'auth/register/rejected'){
         const errorCode = res.payload as string; // Ensure it's a string
         const translatedMsg = lang[errorCode] || errorCode;
