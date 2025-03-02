@@ -6,6 +6,7 @@ import ThemeChanger from '../button/ThemeChanger';
 import LangChanger from '../button/LangChanger';
 import UserMenu from '../usermenu/UserMenu';
 import MobileMenu from '../mobilemenu/MobileMenu';
+import { HeaderWrap } from '../mobilemenu/MobileMenu.styled';
 
 
 const AppBar = () => {
@@ -14,11 +15,13 @@ const AppBar = () => {
   return (
     <StyledHeader >
       <Navigation />
-      <Wrap className='TL_center'>
-        <LangChanger/>
-        <ThemeChanger/>
-      </Wrap>
-        {token ? <UserMenu /> : <AuthNav />}
+      <HeaderWrap>
+        <Wrap className='TL_center'>
+          <LangChanger/>
+          <ThemeChanger/>
+        </Wrap>
+          {token ? <UserMenu /> : <AuthNav />}
+      </HeaderWrap>
         <MobileMenu/>
     </StyledHeader>
   );
