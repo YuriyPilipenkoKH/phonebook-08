@@ -26,7 +26,24 @@ export const HomeWrapper= styled.div`
     display: none;
 }
   }
+
 `
+export const AuthWrapper= styled.div`
+  width: 100%;
+  background-image: var(--auth-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  justify-items: center;
+
+  &>.login__wrap {
+  width: 360px;
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }}
+`
+
 export const PhonebookWrapper= styled.div`
   width: 100%;
 
