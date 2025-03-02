@@ -9,7 +9,7 @@ const LoginPage = () => {
    const {isLoading} = useAuth()
   return (
     <>
-      <AuthWrapper className='login__bg '>
+      <AuthWrapper className='login__bg AuthWrapper'>
       <div className='login__wrap'>
         <div>
           <title>{lang.logBtn}</title>

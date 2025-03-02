@@ -12,15 +12,15 @@ import { useAuth } from '../../hooks/useAuth';
 import { LoginSchemaType, useLoginSchema } from '../../hooks/useLoginSchema';
 import { Notify } from 'notiflix';
 import capitalize from '../../lib/capitalize';
-
+import { LuRefreshCw } from "react-icons/lu";
 
 
 const LoginForm = () => {
-  const TIME = 25
+  const TIME = 15
   const dispatch = useAppDispatch();
   const [show, setShow] = useState<boolean>(false);
   const [timer, setTimer] = useState<boolean | null>(null);
-  const [remained, setRemained] = useState<number>(TIME);
+  const [remained, setRemained] = useState<number >(TIME);
   const lang = useLanguage()
   const {user, isLoading} = useAuth()
   const {loginSchema} = useLoginSchema()
@@ -52,7 +52,7 @@ const LoginForm = () => {
       }, 1000);
       }
   else if(remained === 0) {
-    reset()
+    // reset()
     setTimer(null)
     setTimeout(() => setRemained(TIME), 1000);
   }
@@ -60,9 +60,11 @@ const LoginForm = () => {
 
   const handleInputChange =() => {
     setTimer(true)
+
   };
   const onSubmit = (data: LoginSchemaType) => {
-    setTimer(false)
+    setTimer(null)
+    setRemained(0)
     dispatch(logIn(data))
     .then((res) => {
       console.log(res);
@@ -86,7 +88,8 @@ const LoginForm = () => {
     <FormWrapper>
       <LogoWrapp><IoMdUnlock size={50}/></LogoWrapp>
       <MainTitle>
-      {lang.logBtn} {timer ? <CgSandClock/> : ''}</MainTitle>
+        {lang.logBtn} {timer ? <CgSandClock/> : ''}
+      </MainTitle>
 
       <StyledForm 
       autoComplete="off" 
@@ -116,8 +119,10 @@ const LoginForm = () => {
         {errors.password && <div className='text-purple-900'>{errors.password.message}</div>}
         <Button 
         type="submit"
-        disabled = {!remained || isLoading || !isDirty || !isValid}>
-          {remained ? lang.logBtn : lang.try }
+        disabled = { isLoading || !isDirty || !isValid}>
+          {/* {remained ? lang.logBtn : lang.try } */}
+          { isLoading &&  <LuRefreshCw className='LuRefreshCw size-6 animate-spin' />}  
+          { isLoading  ? "Sending.." :  lang.logBtn}
         </Button>
         {timer 
         ?  <SecondsCounter>{remained}{lang.left}</SecondsCounter>
