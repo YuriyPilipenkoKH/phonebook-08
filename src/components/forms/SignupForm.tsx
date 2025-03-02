@@ -12,6 +12,7 @@ import { SignUpSchemaType, useSignUpSchema } from '../../hooks/useSignUpSchema';
 import { Notify } from 'notiflix';
 import { useAuth } from '../../hooks/useAuth';
 import capitalize from '../../lib/capitalize';
+import { LuRefreshCw } from 'react-icons/lu';
 
 const SignupForm = () => {
 
@@ -111,6 +112,7 @@ const SignupForm = () => {
           <Button  
           type="submit"
           disabled={isLoading || !isDirty || !isValid }>
+            { isLoading &&  <LuRefreshCw className='LuRefreshCw size-6 animate-spin' />} 
             { isLoading  ? "Sending.." :  lang.regSubmit}
           </Button>
 
