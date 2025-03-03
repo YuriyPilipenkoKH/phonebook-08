@@ -367,7 +367,10 @@ height: 55px;
   align-items: center;
   justify-content: center;
   background-color: #eee5;
-}
+    &>img {
+      border-radius: 50%;
+    }  
+  }
 
 .avatar__wrapp > svg{
  width: 40px ;

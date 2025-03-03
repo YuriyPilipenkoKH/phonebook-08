@@ -85,7 +85,7 @@ export const Wrap = styled.div`
 `
 export const MobileWrap = styled.div`
   display: flex;
-	gap: 32px;
+	gap: 12px;
     @media screen and (min-width: 768px) {
     display: none;
 	}

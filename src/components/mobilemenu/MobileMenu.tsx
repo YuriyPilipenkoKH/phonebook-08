@@ -9,11 +9,12 @@ import ThemeChanger from "../button/ThemeChanger";
 import { useAuth } from "../../hooks/useAuth";
 import { StyledLink } from "../layout/Layout.styled";
 import { useLanguage } from "../../hooks/useLanguage";
-import { MenuItem } from "../usermenu/UserMenu.styled";
+import { MenuItem, UserName } from "../usermenu/UserMenu.styled";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { AuthResponse, logOut } from "../../redux/auth/operations";
 import { Notify } from "notiflix";
 import capitalize from "../../lib/capitalize";
+import AvatarUploadForm from "../forms/AvatarUploadForm";
 
 
 const MobileMenu = () => {
@@ -46,11 +47,14 @@ const MobileMenu = () => {
           {lang.logBtn}
         </StyledLink>
         )  : (
-        <MenuItem type='button' onClick={quit}>
-          {lang.out}
-        </MenuItem>
+          <>
+            <AvatarUploadForm/>
+            <UserName >{user?.email}</UserName>
+            <MenuItem type='button' onClick={quit}>
+              {lang.out}
+            </MenuItem>
+          </>
         )}
-
           <LangChanger styles="MenuItemStyles"/>
           <ThemeChanger styles="MenuItemStyles"/>
         <MenuItem

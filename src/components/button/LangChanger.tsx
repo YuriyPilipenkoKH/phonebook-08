@@ -7,7 +7,6 @@ interface LangChangerProps{
   styles?:string
 }
 
-
 const LangChanger:React.FC<LangChangerProps> = ({styles}) => {
     const {language} = useAll()
     const dispatch = useAppDispatch()
