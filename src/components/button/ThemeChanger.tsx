@@ -5,8 +5,12 @@ import { toggleTheme } from '../../redux/theme/themeSlice';
 import {MdOutlineNightlight} from 'react-icons/md';
 import {MdOutlineLightMode} from 'react-icons/md';
 
+interface ThemeChangerProps{
+  styles?:string
+}
 
-export default function ThemeChanger() {
+
+const ThemeChanger:React.FC<ThemeChangerProps> = ({styles}) => {
     const {theme} = useAll()
     const dispatch = useAppDispatch()
     useEffect(() => {
@@ -17,7 +21,7 @@ export default function ThemeChanger() {
 
   return (
     <button
-      className="btn btn-ghost text-[var(--text-color)] "
+      className={ `${styles} btn btn-ghost text-[var(--text-color)] bg-transparent`}
       onClick={()=>dispatch(toggleTheme())}
       aria-label="Toggle Theme"
     >
@@ -27,3 +31,4 @@ export default function ThemeChanger() {
     </button>
   );
 }
+export default ThemeChanger
