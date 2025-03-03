@@ -5,14 +5,16 @@ import {  MenuList, MenuWrap } from "./MobileMenu.styled";
 import { useState } from "react";
 import LangChanger from "../button/LangChanger";
 import ThemeChanger from "../button/ThemeChanger";
-import UserMenu from "../usermenu/UserMenu";
-import AuthNav from "../authnav/AuthNav";
+
 import { useAuth } from "../../hooks/useAuth";
+import { StyledLink } from "../layout/Layout.styled";
+import { useLanguage } from "../../hooks/useLanguage";
 
 
 const MobileMenu = () => {
    const {  token, } = useAuth()
   const [open, setOpen] = useState<boolean>(false)
+    const lang = useLanguage()
   const click = () => setOpen(!open) 
 
   return (
@@ -23,7 +25,11 @@ const MobileMenu = () => {
         </FlatButton>
       </MenuWrap>
       <MenuList className={ open ? 'open' : ''}>
-      {token ? <UserMenu /> : <AuthNav />}
+      {!token &&         (
+        <StyledLink  to="/login" onClick={click}>
+          {lang.logBtn}
+          </StyledLink>
+            )}
           <LangChanger/>
           <ThemeChanger/>
 
