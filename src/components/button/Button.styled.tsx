@@ -125,6 +125,7 @@ export const StyledArrowButton = styled.button`
   border: none;
   background-color: transparent;
   transition: all 0.4s ease-in-out; 
+  cursor: pointer;
   &:hover {
   background-color: #5983679b;
   }
