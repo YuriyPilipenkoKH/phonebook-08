@@ -47,6 +47,7 @@ export const langEN = createLang({
   next : 'Next',
   page: 'Page',
   of: 'of',
+  back: 'Back',
 
   phName: 'type name..',
   phEmail: 'type email..',
@@ -126,6 +127,7 @@ export const langUA = createLang({
   next : 'Наступна',
   page: 'Сторінка',
   of: 'з',
+  back: 'Назад',
 
   phName: "введіть ім'я..",
   phEmail: 'введіть імейл..',

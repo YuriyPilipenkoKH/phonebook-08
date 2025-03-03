@@ -42,7 +42,7 @@ const MobileMenu = () => {
       </MenuWrap>
       <MenuList className={ open ? 'open' : ''}>
       {!token ?         (
-        <StyledLink  to="/login" onClick={click}>
+        <StyledLink  to="/login" onClick={click} className={'login_link'}>
           {lang.logBtn}
         </StyledLink>
         )  : (
@@ -57,7 +57,7 @@ const MobileMenu = () => {
         type="button" 
         onClick={click}
         className="" >
-          Back
+          {lang.back}
         </MenuItem>
       </MenuList>
     </>

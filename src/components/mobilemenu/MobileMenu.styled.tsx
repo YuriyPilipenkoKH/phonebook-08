@@ -48,4 +48,7 @@ export const MenuList = styled.div`
     height: 16px;
    
   }
+  &>a.login_link{
+    width: 150px;
+  }
 `
