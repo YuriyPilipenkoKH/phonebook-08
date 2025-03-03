@@ -3,7 +3,7 @@ import { StyledSpinner, Wrap } from './Loader.styled'
 
 const Loader = () => {
   return (
-    <Wrap>
+    <Wrap className='Loader'>
     <StyledSpinner/>
     </Wrap>
   )

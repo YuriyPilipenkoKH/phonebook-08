@@ -14,10 +14,10 @@ const rotate = keyframes`
 
 `
 
+
 export const StyledSpinner = styled(Spinner)`
-    
-    animation:${rotate} 2s linear infinite;
-`
+  /* animation: ${rotate} 2s linear infinite; */
+`;
 
 export const Wrap= styled.div`
    position: fixed;
@@ -25,6 +25,7 @@ export const Wrap= styled.div`
     bottom: 0;
     left: 0;
     right: 0;
+    fill: var(--react-color);
     display: flex;
     align-items: center;
     justify-content: center;

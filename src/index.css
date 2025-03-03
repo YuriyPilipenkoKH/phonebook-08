@@ -408,4 +408,7 @@ height: 55px;
 .LuRefreshCw{
     animation: spin 1s linear infinite;
 }
+.Spinner{
+    animation: spin 4s linear infinite;
+}
 /* spinner animation */
