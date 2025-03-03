@@ -90,23 +90,22 @@ export const StyledButton = styled.button`
   box-shadow: var(--shadow-four);
   transition: all 0.8s ease;
 
-  &:hover  {
-  color: #888;
-  background-color: var(--bright-green);
-  box-shadow: var(--shadow-two);
+    &:hover  {
+    color: #888;
+    background-color: var(--bright-green);
+    box-shadow: var(--shadow-two);
 
-  & >svg {
-  fill: #888;
-  }
-  }
-  ${ripple} ;
+    & >svg {
+    fill: #888;
+    }
+    }
+    ${ripple} ;
 
 `;
 
 export const StyledArrowButton = styled.button`
   position: relative;
   overflow: hidden;
-
   padding: 0;
   border: none;
   background-color: transparent;
@@ -114,7 +113,7 @@ export const StyledArrowButton = styled.button`
 `;
 
  const flatBtnStyles =css`
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
@@ -126,24 +125,28 @@ export const StyledArrowButton = styled.button`
   background-color: transparent;
   transition: all 0.4s ease-in-out; 
   cursor: pointer;
-  &:hover {
-  background-color: #5983679b;
-  }
-  &:disabled{
-  background-color: #888;
-  }
+    &:hover {
+    background-color: #5983679b;
+    }
+    &:disabled{
+    background-color: #888;
+    }
+    &>svg {
+    fill: var(--text-color);
+    color: var(--text-color);
+    }
 `
 
 export const StyledFlatButton = styled.button`
   ${flatBtnStyles} ;
 
+
 `
 export const StyledFlatLink = styled(Link)`
-    ${flatBtnStyles} ;
+  ${flatBtnStyles} ;
 `
 
 export const ZodError = styled.div`
-  
   color: var(--current-color);
   font-size: 14px;
   font-weight: 600;

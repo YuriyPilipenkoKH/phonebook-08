@@ -89,7 +89,7 @@ export const MobileWrap = styled.div`
     @media screen and (min-width: 768px) {
     display: none;
 	}
-	
+
 	&>a {
 	display: flex;
 	align-items: center;
@@ -102,9 +102,12 @@ export const MobileWrap = styled.div`
 	border: none;
 	background-color: transparent;
 	transition: all 0.4s ease-in-out; 
-	&:hover {
-	background-color: #5983679b;
-	}
+		&:hover {
+		background-color: #5983679b;
+		}
+		&>svg {
+		fill: var(--text-color);
+		}
 
     }
 

@@ -6,9 +6,15 @@ export const Menu = styled.div`
 
 export const MenuWrap = styled.div`
   display: block;
+
+		&>svg {
+		fill: var(--text-color);
+		}
+
   @media screen and (min-width: 768px) {
     display: none;
     }
+    
 `
 export const HeaderWrap = styled.div`
     display: none;
